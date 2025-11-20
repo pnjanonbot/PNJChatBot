@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+  pnjchat-bot:
+    build: .
+    container_name: pnjchat-bot-app
+    restart: always
+    volumes:
+      - .:/app
+    environment:
+      - BOT_TOKEN=${BOT_TOKEN}
+      - VALID_EMAIL_DOMAINS=${VALID_EMAIL_DOMAINS}
+      - SENDER_EMAIL=${SENDER_EMAIL}
+      - SMTP_USER=${SMTP_USER}
+      - SENDER_APP_PASSWORD=${SENDER_APP_PASSWORD}
+      - SMTP_SERVER=${SMTP_SERVER}
+      - SMTP_PORT=${SMTP_PORT}
+      - ADMIN_CHAT_ID=${ADMIN_CHAT_ID}
+      - BAN_THRESHOLD=${BAN_THRESHOLD}
+      - DUMMY_USER_ID=${DUMMY_USER_ID}
+      - DB_HOST=pnjchat-db-mysql
+      - DB_PORT=${DB_PORT}
+      - DB_USER=${DB_USER}
+      - DB_PASS=${DB_PASS}
+      - DB_NAME=${DB_NAME}
+    depends_on:
+      - pnjchat-db-mysql
+
+  pnjchat-db-mysql:
+    image: mysql:8.0
+    container_name: pnjchat-mysql-db
+    restart: always
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_ROOT_PASSWORD: '${DB_PASS}'
+      MYSQL_DATABASE: '${DB_NAME}'
+      MYSQL_USER: '${DB_USER}'
+      MYSQL_PASSWORD: '${DB_PASS}'
+    ports:
+      - "127.0.0.1:3306:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+
+volumes:
+  mysql-data:

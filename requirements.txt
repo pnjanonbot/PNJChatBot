@@ -1,0 +1,5 @@
+python-telegram-bot[job-queue]==21.2
+python-dotenv==1.2.1
+aiomysql==0.2.0
+cryptography
+python-minifier

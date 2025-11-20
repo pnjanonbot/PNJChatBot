@@ -1,0 +1,13 @@
+## Python
+venv/
+__pycache__/
+
+# Secrets
+.env
+
+# Logs
+*.log
+
+# Temporary files
+all_project_code.txt
+cat.py

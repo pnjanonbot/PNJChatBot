@@ -1,0 +1,60 @@
+{
+    "Teknik Sipil": [
+        "D3 Konstruksi Sipil",
+        "D3 Konstruksi Gedung",
+        "D4 Teknik Perancangan Jalan dan Jembatan",
+        "D4 Teknik Konstruksi Gedung"
+    ],
+    "Teknik Mesin": [
+        "D3 Teknik Mesin",
+        "D3 Teknik Mesin (Demak)",
+        "D3 Teknik Konversi Energi",
+        "D3 Alat Berat",
+        "D4 Teknologi Rekayasa Manufaktur",
+        "D4 Teknologi Rekayasa Manufaktur (Pekalongan)",
+        "D4 Teknologi Rekayasa Pembangkit Energi",
+        "D4 Teknologi Rekayasa Konversi Energi",
+        "D4 Teknologi Rekayasa Pemeliharaan Alat Berat"
+    ],
+    "Teknik Elektro": [
+        "D3 Elektronika Industri",
+        "D3 Teknik Listrik",
+        "D3 Telekomunikasi",
+        "D4 Instrumentasi Kontrol Industri",
+        "D4 Teknik Otomasi Listrik Industri",
+        "D4 Broadband Multimedia"
+    ],
+    "Akuntansi": [
+        "D3 Akuntansi",
+        "D3 Keuangan dan Perbankan",
+        "D4 Akuntansi Keuangan",
+        "D4 Keuangan dan Perbankan",
+        "D4 Keuangan dan Perbankan Syariah",
+        "D4 Manajemen Keuangan",
+        "D3 Manajemen Pemasaran (WNBK)"
+    ],
+    "Administrasi Niaga": [
+        "D3 Administrasi Bisnis",
+        "D4 Administrasi Bisnis Terapan",
+        "D4 Usaha Jasa Konvensi, Perjalanan Insentif, dan Pameran (MICE)",
+        "D4 MICE (Demak)",
+        "D4 Bahasa Inggris untuk Komunikasi Bisnis dan Profesional"
+    ],
+    "Teknik Grafika & Penerbitan": [
+        "D3 Penerbitan",
+        "D3 Teknik Grafika",
+        "D4 Desain Grafis",
+        "D4 Teknologi Industri Cetak Kemasan",
+        "D4 Teknologi Rekayasa Cetak dan Grafis 3D"
+    ],
+    "Teknik Informatika & Komputer": [
+        "D4 Teknik Informatika",
+        "D4 Teknik Multimedia Digital",
+        "D4 Teknik Multimedia dan Jaringan",
+        "D1 Teknik Komputer dan Jaringan"
+    ],
+    "Pascasarjana": [
+        "S2 Magister Rekayasa Teknologi Manufaktur",
+        "S2 Magister Teknik Elektro"
+    ]
+}
