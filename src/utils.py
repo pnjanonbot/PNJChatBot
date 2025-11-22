@@ -25,7 +25,7 @@ def is_spamming(user_id: int, limit: float = 1.0) -> bool:
     return False
 
 def is_valid_pnj_email(email: str) -> bool:
-    escaped_domains = [re.escape(d) for d in config.VALID_EMAIL_DOMAINS]
+    escaped_domains = [re.escape(d.lstrip('@')) for d in config.VALID_EMAIL_DOMAINS]
     pattern = r'^[a-zA-Z0-9._%+-]+@({})$'.format('|'.join(escaped_domains))
     
     if re.fullmatch(pattern, email):
