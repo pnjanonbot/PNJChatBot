@@ -48,15 +48,18 @@ def format_profile(user_data: dict) -> str:
     
     gender_map = {"cowo": "Laki-laki ♂️", "cewe": "Perempuan ♀️"}
     
-    nama = html.escape(user_data.get('nama', 'N/A')) 
-    jurusan = html.escape(user_data.get('jurusan', 'N/A'))
-    prodi = html.escape(user_data.get('prodi', 'N/A'))
-    bio = html.escape(user_data.get('bio', 'N/A'))
+    nama = html.escape(user_data.get('nama') or 'N/A') 
+    jurusan = html.escape(user_data.get('jurusan') or 'N/A')
+    prodi = html.escape(user_data.get('prodi') or 'N/A')
+    bio = html.escape(user_data.get('bio') or 'N/A')
+    
+    raw_gender = user_data.get('gender') or ''
+    gender = gender_map.get(raw_gender.lower(), 'N/A')
 
-    gender = gender_map.get(user_data.get('gender', '').lower(), 'N/A')
     like_count = user_data.get('like_count', 0)
     badge = get_like_badge(like_count)
     avatar = user_data.get('avatar', '👤')
+    angkatan = user_data.get('angkatan') or 'N/A'
 
     return (
         f"<b>{avatar} Partner Ditemukan!</b>\n"
@@ -64,7 +67,7 @@ def format_profile(user_data: dict) -> str:
         f"Berikut adalah profil partner ngobrolmu:\n\n"
         f"🎓 <b>Jurusan:</b> {jurusan}\n"
         f"📚 <b>Prodi:</b> {prodi}\n"
-        f"🗓️ <b>Angkatan:</b> {user_data.get('angkatan', 'N/A')}\n"
+        f"🗓️ <b>Angkatan:</b> {angkatan}\n"
         f"👤 <b>Gender:</b> {gender}\n\n"
         f"📝 <b>Bio:</b>\n"
         f"<i>{bio}</i>"
@@ -91,30 +94,33 @@ def format_my_profile(user_data: dict) -> str:
     
     gender_map = {"cowo": "Laki-laki ♂️", "cewe": "Perempuan ♀️"}
     
-    nama = html.escape(user_data.get('nama', 'N/A'))
-    email = html.escape(user_data.get('email', 'N/A'))
-    jurusan = html.escape(user_data.get('jurusan', 'N/A'))
-    prodi = html.escape(user_data.get('prodi', 'N/A'))
-    bio = html.escape(user_data.get('bio', 'N/A'))
+    nama = html.escape(user_data.get('nama') or 'N/A')
+    email = html.escape(user_data.get('email') or 'N/A')
+    jurusan = html.escape(user_data.get('jurusan') or 'N/A')
+    prodi = html.escape(user_data.get('prodi') or 'N/A')
+    bio = html.escape(user_data.get('bio') or 'N/A')
 
-    gender = gender_map.get(user_data.get('gender', '').lower(), 'N/A')
+    raw_gender = user_data.get('gender') or ''
+    gender = gender_map.get(raw_gender.lower(), 'N/A')
+    
     like_count = user_data.get('like_count', 0)
     badge = get_like_badge(like_count)
     avatar = user_data.get('avatar', '👤')
+    angkatan = user_data.get('angkatan') or 'N/A'
 
     profile_text = (
         f"{avatar} <b>Profil Anda</b> {f'<b>{badge}</b>' if badge else ''}\n\n"
         f"• <b>Nama:</b> {nama}\n"
         f"• <b>Email:</b> {email}\n"
         f"• <b>Gender:</b> {gender}\n"
-        f"• <b>Angkatan:</b> {user_data.get('angkatan', 'N/A')}\n\n"
+        f"• <b>Angkatan:</b> {angkatan}\n\n"
         f"🎓 <b>Akademik:</b>\n"
         f"• <b>Jurusan:</b> {jurusan}\n"
         f"• <b>Prodi:</b> {prodi}\n\n"
         f"📝 <b>Bio:</b>\n"
         f"<i>{bio}</i>\n\n"
         f"----\n"
-        f"👍 <b>Disukai:</b> {user_data.get('like_count', 0)} kali\n"
+        f"👍 <b>Disukai:</b> {like_count} kali\n"
         f"🚫 <b>Laporan Diterima:</b> {user_data.get('report_count', 0)} kali"
         f"\n\n📊 <b>Statistik Anda:</b>\n"
         f"• <b>Total Obrolan:</b> {user_data.get('total_chats', 0)}\n"
